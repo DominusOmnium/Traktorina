@@ -1,0 +1,59 @@
+﻿@model IEnumerable<MarinaIvanna.Models.UserRequest>
+@{
+    ViewData["Title"] = "Home Page";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/css/mc.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+</head>
+<body>
+    <a href="~/Home/AuthorizationUser" class="texit">Выход</a>
+    <div class="container main">
+        <div class="row">
+            <div class="col-8">
+                <div class="mz">Мои Заявки</div>
+                <div class="accordion" id="accordionExample">
+                    @foreach (var v in Model)
+                    {
+                        <div class="card za">
+                            <div class="card-header" id="!@v.Id">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link" data-toggle="collapse" data-target="#@v.Id" aria-expanded="false" aria-controls="@v.Id">
+                                        <div class="acch">Заявка №@v.Id</div>
+                                        <div class="acch">Статус заявки: @v.Status</div>
+                                    </button>
+                                </h5>
+                            </div>
+
+                            <div id="@v.Id" class="collapse hide" aria-labelledby="!@v.Id" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <div class="binz">Заявитель</div>
+                                    <div class="linz">Направление: @v.Type</div>
+                                    <div class="linz">E-mail: @v.Email</div>
+                                    <div class="linz">Адрес: @v.Address</div>
+                                    <div class="binz">Проблема</div>
+                                    <div class="mess">@v.Message</div>
+                                    <div class="binz">Управляющая компания</div>
+                                    <div class="linz">@v.Company</div>
+                                    <div class="linz">Ответственный: @ViewBag.M_name</div>
+                                    <div><button class="b_success">Принят в работу</button></div>
+                                    <div><button class="b_error">Ошибка маршрутизации</button></div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+</body>
+</html>

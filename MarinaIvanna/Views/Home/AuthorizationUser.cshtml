@@ -1,0 +1,34 @@
+﻿@model User
+@{
+    ViewData["Title"] = "Home Page";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+</head>
+<body>
+    <div class="text-center">
+        <p class="miv">Марь Иванна</p>
+        <p class="vpk">Всё под контролем</p>
+        <form method="post">
+            <div>
+                <div>
+                    <input class="login" name="Login" cols="15" rows="5" placeholder="Логин"/>
+                </div>
+                <div>
+                    <input class="passw" name="Password" cols="15" rows="5" placeholder="Пароль"/>
+                </div>
+                <div>
+                    <input class="loginbtn" type="submit" value="Войти" />
+                </div>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+</head>
+<body>
+    <div class="miv">Марь Иванна</div>
+    <div class="vpk">Всё под контролем</div>
+
+    <div class="container tap_top">
+        <div class="row">
+            <div class="col-4">
+
+                <form method="post">
+                    <input class="email" name="Email" cols="15" rows="5" placeholder="Email" />
+                    <input class="email" name="Name" cols="15" rows="5" placeholder="Как к вам обращаться?" />
+                    <h3 class="standtext">Адрес проблемы:</h3>
+                    <div>
+                        <select class="address" name="Address">
+                            <option value="Адрес 1">"Адрес 1</option>
+                            <option value="Адрес 2">"Адрес 2</option>
+                            <option value="Адрес 3">"Адрес 3</option>
+                        </select>
+                    </div>
+                    <h3 class="standtext">Управляющая компания: </h3>
+                    <h3 class="standtext">Описание проблемы:</h3>
+                    <div>
+                        <textarea name="Message" cols="60" rows="5" placeholder="Опишите вашу проблему"></textarea>
+                    </div>
+                    <div>
+                        <input class="button_send" type="submit" value="Отправить" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

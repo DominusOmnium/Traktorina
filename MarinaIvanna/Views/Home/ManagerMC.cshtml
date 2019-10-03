@@ -1,0 +1,98 @@
+﻿@model UserManager
+@{
+    ViewData["Title"] = "Home Page";
+    Layout = null;
+}
+<script>
+    $('#myModal').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget)
+        var recipient = button.data('whatever')
+        var modal = $(this)
+        modal.find('.Id').val(recipient)
+    })
+</script>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/css/mc.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+</head>
+<body>
+    <a href="~/Home/AuthorizationUser" class="texit">Выход</a>
+    <div class="container main">
+        <div class="row">
+            <div class="col-4">
+                <div class="miv">Марь Иванна</div>
+                <div class="kman">Кабинет Менеджера</div>
+                <div class="mname">Имя: @Model.UserName</div>
+                <div class="memail">e-mail: @Model.UserMail</div>
+                <div class="mnapr">Мои Направления</div>
+                @foreach (var p in Model.Problems)
+                {
+                <div class="fnapr">@p.Value</div>
+                }
+            </div>
+            <div class="col-8">
+                <div class="mz">Мои Заявки</div>
+                <div class="accordion" id="accordionExample">
+                    @foreach (var v in Model.UserRequests)
+                    {
+                        <div class="card za">
+                            <div class="card-header" id="!@v.Id">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link" data-toggle="collapse" data-target="#@v.Id" aria-expanded="false" aria-controls="@v.Id">
+                                        <div class="acch">Заявка №@v.Id</div>
+                                        <div class="acch">Статус заявки: @v.Status</div>
+                                    </button>
+                                </h5>
+                            </div>
+
+                            <div id="@v.Id" class="collapse hide" aria-labelledby="!@v.Id" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <div class="binz">Заявитель</div>
+                                    <div class="linz">Направление: @v.Type</div>
+                                    <div class="linz">E-mail: @v.Email</div>
+                                    <div class="linz">Адрес: @v.Address</div>
+                                    <div class="binz">Проблема</div>
+                                    <div class="mess">@v.Message</div>
+                                    <div class="binz">Управляющая компания</div>
+                                    <div class="linz">@v.Company</div>
+                                    <div class="linz">Ответственный: @ViewBag.M_name</div>
+                                    <div><button class="b_success" data-toggle="modal" data-target="#myModal" data-whatever="@v.Id">Принят в работу</button></div>
+                                    <div><button class="b_error">Ошибка маршрутизации</button></div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div>
+                    <button type="button" class="close1" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="date" id="myModalLabel">Запрос даты</h4>
+
+                </div>
+                <h3 class="standtext1">Направить заявку на следующую дату: </h3>
+                <input readonly="readonly" class="cent" name="Id" cols="15" rows="5" />
+                <input class="cent" name="Email" cols="15" rows="5" placeholder="Дата" />
+                <input class="cent" name="Name" cols="15" rows="5" placeholder="Email" />
+                <button type="submit" class="button_send1">Отправить заявку</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>

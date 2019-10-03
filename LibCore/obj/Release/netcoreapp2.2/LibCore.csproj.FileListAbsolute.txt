@@ -1,0 +1,9 @@
+C:\Users\nobyA\source\repos\RetroFit\Zcore\LibCore\bin\Release\netcoreapp2.2\LibCore.deps.json
+C:\Users\nobyA\source\repos\RetroFit\Zcore\LibCore\bin\Release\netcoreapp2.2\LibCore.dll
+C:\Users\nobyA\source\repos\RetroFit\Zcore\LibCore\bin\Release\netcoreapp2.2\LibCore.pdb
+C:\Users\nobyA\source\repos\RetroFit\Zcore\LibCore\obj\Release\netcoreapp2.2\LibCore.csprojAssemblyReference.cache
+C:\Users\nobyA\source\repos\RetroFit\Zcore\LibCore\obj\Release\netcoreapp2.2\LibCore.csproj.CoreCompileInputs.cache
+C:\Users\nobyA\source\repos\RetroFit\Zcore\LibCore\obj\Release\netcoreapp2.2\LibCore.AssemblyInfoInputs.cache
+C:\Users\nobyA\source\repos\RetroFit\Zcore\LibCore\obj\Release\netcoreapp2.2\LibCore.AssemblyInfo.cs
+C:\Users\nobyA\source\repos\RetroFit\Zcore\LibCore\obj\Release\netcoreapp2.2\LibCore.dll
+C:\Users\nobyA\source\repos\RetroFit\Zcore\LibCore\obj\Release\netcoreapp2.2\LibCore.pdb
